@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="P2C Cominication Action on Parent" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="search"
+                label="Search Contact "
+                placeholder="type key word..."
+                onkeyup={changeHandler}>
+            </lightning-input>
+            <!-- Display Recors -->
+            <template if:true={contacts}>
+                <c-sf_non-primitive-child
+                    records={contacts}
+                    columns={columns}>
+            </c-sf_non-primitive-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

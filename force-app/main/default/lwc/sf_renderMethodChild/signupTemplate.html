@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Sign Up " icon-name="standard:task">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="User First Name"
+                type="text"
+                class="slds-var-m-right_small"> Test
+            </lightning-input>
+            <lightning-input
+                label="User Last Name"
+                type="text"
+                class="slds-var-m-right_small"> Test
+            </lightning-input><lightning-input
+                label="Phone Number"
+                type="phone"
+                class="slds-var-m-right_small"> Test
+            </lightning-input>
+            <lightning-input
+                label="User Email"
+                type="email"
+                class="slds-var-m-right_small"> Test
+            </lightning-input>
+            <lightning-input
+                label="Password"
+                type="password"> Test
+            </lightning-input>
+            <div class="slds-var-m-around_small">
+                <lightning-button
+                    variant="brand"
+                    label="Cancel"
+                    onclick={cancelHandler}
+                    class="slds-var-m-right_small">
+                </lightning-button>
+                <lightning-button
+                    variant="brand"
+                    label="Save"
+                    onclick={saveHandler}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

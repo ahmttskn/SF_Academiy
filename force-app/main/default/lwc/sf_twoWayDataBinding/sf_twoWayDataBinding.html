@@ -1,0 +1,24 @@
+<template>
+    <lightning-card
+        title="Two Way Data Binding"
+        class="slds-var-m-around_medium"
+        icon-name="custom:custom11">
+            <div class="slds-var-m-around_medium">
+                <lightning-input
+                    type="text" 
+                    label="Name" 
+                    placeholder="Name"
+                    value={name}
+                    onkeydown={changeHandler}>
+                </lightning-input>
+                <lightning-input
+                    type="text" 
+                    label="Last Name" 
+                    placeholder="Last Name"
+                    value={lastName}
+                    onkeydown={changeHandler}>
+                </lightning-input>
+            </div>
+                <p class="slds-var-m-top_small slds-var-m-left_small"> Hello my {name} {lastName} </p>
+    </lightning-card>
+</template>

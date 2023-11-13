@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Get Picklist Values">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="text"
+                label="Opportunity Name"
+                name="oppname"
+                value={oppName}
+                onkeyup={nameChangeHandler}>
+            </lightning-input>
+            <lightning-combobox
+                name="stage"
+                label="Opportunity Stage"
+                options={stageOptions}
+                value={selectedStage}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <lightning-combobox
+                name="type"
+                label="Opportunity Type"
+                options={typeOptions}
+                value={selectedType}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <div class="slds-var-m-top_small">
+                Thanks for entering the correct information. You have chosen the name = {oppName}, type = {selectedType} and Stage = {selectedStage}!
+            </div>
+        </div>
+    </lightning-card>
+</template>

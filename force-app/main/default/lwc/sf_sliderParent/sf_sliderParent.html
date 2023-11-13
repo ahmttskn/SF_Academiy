@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="P2C Cominication Calling Child" icon-name="standard:case">
+        <div class="slds-var-m-around_medium">
+            <c-sf_slider-child
+                size={value}>
+            </c-sf_slider-child>
+            <lightning-button 
+                variant="brand" 
+                label="Reset" 
+                onclick={handleClick} 
+                class="slds-var-m-around_medium slds-align_absolute-center">
+            </lightning-button>
+            <lightning-combobox
+                name="progress"
+                label="Choose Size"
+                value={value}
+                placeholder="Select Size"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,24 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+​
+.socialFooter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+​
+.socialFooter .socialLink {
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+​
+.socialFooter .socialLink:hover {
+    transform: scale(1.1);
+}
+​
+.socialFooter .socialLink img {
+    width: 32px;
+}

@@ -1,0 +1,19 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="slds-var-m-around_medium">
+        <template lwc:if={contacdata}>
+            <div class="slds-var-m-around_medium">DISPLAY SEARCH RESULT </div>
+            <lightning-datatable
+                key-field="id"
+                data={contacdata}
+                columns={columns}
+                min-column-width="110"
+                onrowselection={getSelectedRows}>
+                <!-- onclick={clickHandler} -->
+            </lightning-datatable>
+        </template>
+        <template lwc:if={error}>
+            <div class="slds-m-around_medium"> {error} </div>
+        </template>
+    </div>
+</template>

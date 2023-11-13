@@ -1,0 +1,31 @@
+<template>
+    <lightning-layout horizontal-align="center">
+        <!-- Recipe Image -->
+        <lightning-layout-item size="4" padding="around-small">
+            <img src={recipeImage} alt={recipeTitle} />
+        </lightning-layout-item>
+        <!-- Recipe Details -->
+        <lightning-layout-item size="8" padding="around-small">
+            <div class="slds-text-heading_medium slds-var-m-bottom_small">{recipeTitle}</div>
+            <template if:true={showDetails}>
+                <div class="slds-var-m-bottom_small">
+                    <lightning-formatted-rich-text
+                        value={recipeSummary}
+                    >
+                    </lightning-formatted-rich-text>
+                </div>
+                <div><strong>Price per Serving: </strong>${pricePerServing}</div>
+                <div><strong>Ready In: </strong>{readyInMinutes} Minutes</div>
+                <div><strong>Dish Types: </strong>{dishTypes}</div>
+                <div><strong>Diets: </strong>{diets}</div>
+            </template>
+            <template if:false={showDetails}>
+                <lightning-button
+                    label="Get Details"
+                    variant="brand"
+                    onclick={fetchRecipe}>
+                </lightning-button>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout> 
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Get PickList_ByRecordType" icon-name="custom:custom23">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-var-m-around_x-small">
+                <strong> Selected Opp Vendors RtId: </strong>{vendorsRtId}</p>
+            <lightning-combobox
+                label="Opportunity StagaName"
+                value={stageNameValue}
+                placeholder="Select StagaName"
+                options={stageNameOptions}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+            <p class="slds-var-m-around_x-small">
+                <strong> Selected value is: </strong>{stageNameValue}</p>
+        </div><br>
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Opportunity LeadSource"
+                value={leadSourceValue}
+                placeholder="Select LeadSource"
+                options={leadSourceOptions}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+            <p class="slds-var-m-around_x-small">
+                <strong> Selected value is: </strong>{leadSourceValue}</p>
+        </div>
+    </lightning-card>
+</template>

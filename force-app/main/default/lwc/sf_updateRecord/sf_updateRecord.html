@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Update Record" icon-name="standard:case">
+        <div class="slds-var-m-around_medium">
+            <form class="updateRecord">
+                <lightning-input-name disabled></lightning-input-name>
+                <lightning-input
+                    name="CaseNumber"
+                    disabled
+                    label="Case Number"
+                    onchange={changeHandler}>
+                </lightning-input>
+            <lightning-input
+                name="ContactId"
+                disabled
+                label="Contact Name"
+                onchange={changeHandler}>
+            </lightning-input>
+            <lightning-input
+                name="AccountId"
+                disabled
+                label="Account Name"
+                onchange={changeHandler}>
+        </lightning-input>
+                <lightning-input
+                name="Subject"
+                label="Subject"
+                onchange={changeHandler}>
+            </lightning-input>
+                <lightning-input
+                    name="Description"
+                    label="Description"
+                    onchange={changeHandler}>
+                </lightning-input>
+                <lightning-combobox
+                    options={priorityOptions}
+                    label="Priority"
+                    name="Priority">
+                </lightning-combobox>
+                <lightning-combobox
+                    options={statusOptions}
+                    label="Status"
+                    name="Status">
+                </lightning-combobox>
+            </form>
+            <div class="slds-var-m-around_x-small slds-align_absolute-center">
+                <lightning-button
+                    class="slds-var-m-right_x-small"
+                    label="Reset"
+                    onclick={resetHandler}
+                    variant="brand">
+                </lightning-button>
+                <lightning-button
+                    label="Save"
+                    variant="brand"
+                    onclick={updateHandler}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

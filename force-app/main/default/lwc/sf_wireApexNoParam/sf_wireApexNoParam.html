@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Wire with Apex (no params)" icon-name="standard:case">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <div key={acc.Id} class="slds-var-m-around_small">
+                        <strong>Account Name: </strong> {acc.Name} <br>
+                        <strong>Account Type: </strong> {acc.Type} <br>
+                        <strong>Account Industry: </strong> {acc.Industry} <br>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

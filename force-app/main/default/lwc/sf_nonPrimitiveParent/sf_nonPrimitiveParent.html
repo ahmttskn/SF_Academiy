@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="P2C Non Primitive Cominication (Wire Apex)" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts}>
+                <c-sf_non-primitive-child
+                    records={accounts.data}
+                    columns={columns}>
+                </c-sf_non-primitive-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

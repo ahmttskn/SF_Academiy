@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="OPP BY RECORD TYPE">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-view-form record-id={recordId} object-api-name={oppObject}>
+                <lightning-output-field 
+                field-name={oppName}
+                variant="standard"
+              ></lightning-output-field> 
+            </lightning-record-view-form>
+        </div>
+        <div class="slds-var-m-around_medium">
+          <lightning-combobox
+            name="Record Type"
+            label="Record Type"
+            value={selectedrecordType}
+            placeholder="Select Record Type"
+            options={recordTypeOptions}
+            onchange={handleChange} 
+          ></lightning-combobox>   
+      </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+              name="Crude Oil"
+              label="Stage"
+              value={selectedStage}
+              placeholder="Select Stage"
+              options={stageOptions}
+              onchange={handleChange} 
+            ></lightning-combobox>   
+            </div>
+            <div class="slds-var-m-around_medium">
+            <lightning-combobox
+              name="Refined Petroleum"
+              label="Type"
+              value={selectedType}
+              placeholder="Select Type"
+              options={typeOptions}
+              onchange={handleChange} 
+            ></lightning-combobox>
+            </div> 
+            <div class="slds-var-m-around_medium">
+                Selected {selectedType} and {selectedStage} for this {oppName}
+        </div>
+        <!-- <div> {recordTypeOptionsJson} </div> -->
+
+    </lightning-card>
+    
+</template>

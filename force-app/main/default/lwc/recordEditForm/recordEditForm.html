@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Record Edit Form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-edit-form
+                object-api-name={objectName}
+                record-id={recordId}
+                onsuccess={handleClick}>
+                <lightning-messages></lightning-messages>
+                <lightning-input-field field-name={fields.name}></lightning-input-field>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input-field field-name={fields.revenue}></lightning-input-field>
+                        <lightning-input-field field-name={fields.type}></lightning-input-field>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-input-field field-name={fields.Industry}></lightning-input-field>
+                        <lightning-input-field field-name={fields.phone}></lightning-input-field>        
+                    </div>
+                </div>
+                <lightning-button 
+                        variant="brand" 
+                        label="Save" 
+                        type="submit"
+                        class="slds-var-m-left_x-small">
+                </lightning-button>
+            </lightning-record-edit-form>
+            
+
+            <lightning-button label="Show Toast" onclick={handleButtonClick}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

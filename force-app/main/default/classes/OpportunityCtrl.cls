@@ -2,12 +2,12 @@ public with sharing class OpportunityCtrl {
 
     @AuraEnabled(cacheable=true)
     public static List<Opportunity> getOppsByStage(String stage) {
-        return [SELECT Name
+        return [SELECT Name, Type, Amount, StageName, CloseDate
                 FROM Opportunity
                 //WHERE FirstName LIKE :searchKey
-                WHERE Name LIKE :stage
+                WHERE StageName LIKE :stage
                 WITH SECURITY_ENFORCED
-                LIMIT 10];
+                /*LIMIT 10*/];
     }
 
     
@@ -17,6 +17,6 @@ public with sharing class OpportunityCtrl {
                 FROM Opportunity
                 //WHERE FirstName LIKE :searchKey
                 WITH SECURITY_ENFORCED
-                LIMIT 10];
+                /*LIMIT 10*/];
     }
 }

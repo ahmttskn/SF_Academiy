@@ -61,13 +61,12 @@ public with sharing class opportunity_Trigger {
             }
             Update accListWithOpps;
         }   
-
         @Future
         public static void updateTotalAmountGenerated(Set<Id> accountIdsSet){
             List<Account> accListWithOpps = new List<Account>();
             //Fetching accounts and their related opportunitites ordering them based on amount field value
             accListWithOpps = [Select Id, Target_Amount__c, Total_Amount_Generated__c, 
-                            (Select Amount from Opportunities Where StageName = 'Closed Won' and Amount != null)
+                            (Select Amount from Opportunities Where StageName = 'Closed Won and Amount != null')
                             from Account Where Id = :accountIdsSet];
             for(Account acc : accListWithOpps){
                 Decimal totalAmount = 0;//PlaceHolder to store the total amount with each iteration

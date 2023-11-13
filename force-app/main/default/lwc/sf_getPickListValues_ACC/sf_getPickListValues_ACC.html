@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Get Picklist Values Account" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                name="standardRtId"
+                label="Standart Industry Picklist"
+                value={standardIndustryValue}
+                placeholder="Select Progress"
+                options={standardIndustry}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+        <p class="slds-var-m-around_x-small">
+            <strong>Selected value is: </strong> {standardIndustryValue}</p>
+        </div> <br>
+
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                name="customRtId"
+                label="Custom Industry Picklist"
+                value={customIndustryValue}
+                placeholder="Select Progress"
+                options={customIndustry}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+        <p class="slds-var-m-around_x-small">
+            <strong>Selected value is: </strong> {customIndustryValue}</p>
+        </div>
+    </lightning-card>
+</template>

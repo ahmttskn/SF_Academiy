@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Search Contacts" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+
+            <!-- search input -->
+            <lightning-input
+                type="search"
+                value={input}
+                label="Enter search keys to get contact results"
+                onkeyup={searchHandler}>
+            </lightning-input>
+
+            <!-- display search results  child 1-->
+            <c-display-results-plain
+                contacts={contacts}
+                onselect={selectHandler}>
+            </c-display-results-plain>
+
+            <!-- display contact in a modal -->
+            <template if:true={showDetail}>
+                <c-display-contact
+                    record-id={recordId}
+                    onclose={closeHandler}>
+                </c-display-contact>
+            </template>        
+
+        </div>
+    </lightning-card>
+</template>

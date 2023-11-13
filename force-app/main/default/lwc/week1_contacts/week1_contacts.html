@@ -1,0 +1,12 @@
+<template>  
+    <lightning-card title="Contact information">
+        <template for:each={contacts} for:item="contact">
+            <p class="slds-var-m-around_large" key={contact.name}>
+                {contact.name}, {contact.title}, {contact.company}, {contact.stay}
+            </p>
+        </template>
+        <!-- <p class="slds-var-m-around_medium">
+            {firstContact.name}, {firstContact.title}, {firstContact.company}, {firstContact.stay}
+        </p> -->
+    </lightning-card>
+</template>

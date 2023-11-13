@@ -1,0 +1,31 @@
+<template>
+    <lightning-card
+        title="Track Property"
+        class="slds-var-m-around_medium"
+        icon-name="standard:task">
+            <div class="slds-var-m-around_medium">
+                <lightning-input
+                    label="City"
+                    value={location.city}
+                    placeholder="enter your City"
+                    onchange={changeHandler}
+                    type="text">
+                </lightning-input>
+                <lightning-input
+                    label="Country"
+                    value={location.country}
+                    placeholder="enter your Country"
+                    onchange={changeHandler}
+                    type="text">
+                </lightning-input>
+                <lightning-input
+                    label="PostalCode"
+                    value={location.postalCode}
+                    placeholder="Enter your Postal Code"
+                    onchange={changeHandler}
+                    type="text">
+                </lightning-input>
+                <p class="slds-var-m-top_small"> I live in {location.city}, {location.country} and postal code is {location.postalCode} </p>
+            </div>
+    </lightning-card>
+</template>

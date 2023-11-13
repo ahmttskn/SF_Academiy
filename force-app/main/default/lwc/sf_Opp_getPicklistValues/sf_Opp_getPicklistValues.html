@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Get PickLİst Values Opportunity" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Opportunity StageName Piclist"
+                value={stageNameValue}
+                placeholder="Select stage Name"
+                options={oppPickListValues}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+            <p class="slds-var-m-around_x-small">
+                <strong> Selected value is: </strong>{stageNameValue}</p>
+        </div>
+    </lightning-card>
+</template>

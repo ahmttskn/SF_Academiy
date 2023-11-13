@@ -1,0 +1,37 @@
+<template>
+    <lightning-card
+        title="Getters in LWC"
+        icon-name="standard:case">
+            <div class="slds-var-m-around_medium">
+                first fruit {firstFruits} and last fruit {lastFruits}
+            </div>
+            <div class="slds-var-m-around_medium">
+                My numbers {num1} and {num2}, multi = {multiOfNums} <br>
+                 Total result {result}.
+            </div>
+    </lightning-card><br>
+
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom11">
+        <div class="slds-var-m-around_medium">
+            <template if:true={showContent}>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, sequi minima. Amet, soluta asperiores doloribus nisi rerum expedita fuga obcaecati? <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, similique deleniti ducimus enim accusamus aspernatur.
+                </p>
+            </template>
+            <template if:false={showContent}>
+                <p > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, sequi minima. Amet, soluta asperiores doloribus nisi rerum expedita fuga obcaecati?
+                </p>
+            </template><br>
+            <template if:true={showNumber}>
+                <p> Hey, the total is greater than 1000. Here is {num1} and {num2}
+                </p>
+            </template>
+            <lightning-button
+                class="slds-button"
+                variant="brand"
+                onclick={clickHandler}
+                label={label}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="P2C Cominication with Simple Event" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <lightning-button
+                variant="brand"
+                onclick={clikHandler}
+                label="Show Modal"
+                class="slds-var-m-around_medium">
+            </lightning-button>
+            <div class="slds-var-m-around_medium">
+                {message}
+            </div>
+            <template if:true={showDetail}>
+                <c-sf_p2c-simple-event-child
+                    onclose={closeHandler}>
+                </c-sf_p2c-simple-event-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

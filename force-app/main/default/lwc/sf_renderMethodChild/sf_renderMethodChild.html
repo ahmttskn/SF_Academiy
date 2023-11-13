@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="RENDER Method" icon-name="standard:contact">
+        <!-- <div class="slds-grid slds-gutters" ></div> -->
+        <div class="slds-var-m-around_medium">
+            <div class="slds-clearfix">
+                <div class="slds-float_left">
+                  <p>I’m floooaaaating</p>
+                </div>
+                <div class="slds-float_right">
+                  <p>I’m floooaaaating</p>
+                </div>
+              </div><br>
+
+
+            <div class="slds-var-m-bottom_small">What would you like to do?</div>
+            <lightning-button
+                variant="brand"
+                label="Sign in"
+                onclick={clickHandler}
+                class="slds-var-m-right_small">
+            </lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Sign up"
+                onclick={clickHandler}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

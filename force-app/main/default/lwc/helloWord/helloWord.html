@@ -1,0 +1,63 @@
+<template>
+    <lightning-card 
+        class="slds-var-m-around_medium" 
+        title="Hello Word"
+        icon-name="standard:contact">
+            <div class="slds-var-m-around_medium">
+                Hello Word. <br>
+                {name} {lastName}.<br>
+                {fullName}
+            </div>
+    </lightning-card>
+
+    <lightning-card 
+        class="slds-var-m-around_medium"
+        title="Object"
+        icon-name="custom:custom51">
+            <div class="slds-var-m-around_medium">
+                <strong> {location.city} </strong><br>
+                {location.country} <br>
+                {location.postalCode} 
+            </div>
+    </lightning-card>
+
+    <lightning-card
+        class="slds-var-m-around_medium"
+        title="Array"
+        icon-name="custom:custom11">
+            <div class="slds-var-m-around_medium">
+                <template for:each={fruits} for:item="fruit" >
+                    <div key={fruit}>
+                        {fruit}
+                    </div>
+                </template>
+            </div>
+    </lightning-card>
+
+    <lightning-card
+        class="slds-var-m-around_medium"
+        title="Array"
+        icon-name="custom:custom18">
+            <div class="slds-var-m-around_medium">
+                <ol class="slds-list_ordered">
+                    <template for:each={fruits} for:item="eachItem">
+                        <li class="slds-var-m-around_x-small" key={eachItem}>{eachItem}</li>
+                    </template>
+                </ol>
+            </div>
+    </lightning-card>
+<!--    -->
+    <lightning-card 
+        class="slds-var-m-around_medium" 
+        title="Object List"
+        icon-name="standard:case">
+            <div class="slds-var-m-around_medium">
+                <template for:each={contacts} for:item="con" for:index="id">
+                    <p key={con.id}>
+                        {con.id} {con.firstName} {con.lastName} 
+                    </p>
+                </template>
+            </div>
+    </lightning-card>
+    
+</template>

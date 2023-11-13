@@ -1,0 +1,15 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card
+        title="LMS Publisher Web Component"
+        icon-name="custom:custom30"
+        >
+            <div class="slds-var-m-around_medium" onselect={handleSelect}>
+                <lightning-datatable
+                        key-field="id"
+                        data={accounts}
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+    </lightning-card>
+</template>

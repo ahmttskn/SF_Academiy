@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Search Contact" icon-name="standard:account" variant="base">
+      <div class="slds-var-m-around_medium">
+        
+        <lightning-input 
+          type="search"
+          label="Enter contact name"
+          value={searchKey}
+          onchange={changeHandle}
+        ></lightning-input>
+
+        <c-week4_display-contact
+            contacdata={contacts}
+            error={error}
+            onselect={selectHandler}>
+        </c-week4_display-contact>
+
+        <template if:true={showDetail}>
+            <c-week4_display-results
+                record-id={recordId}
+                onclose={closeHandler}>
+            </c-week4_display-results>
+        </template>
+
+      </div>
+    </lightning-card>
+</template>

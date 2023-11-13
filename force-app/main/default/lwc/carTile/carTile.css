@@ -1,0 +1,8 @@
+img.carImage {
+    width: 120px;
+    height: initial;
+    pointer-events: none;
+}
+.car-title {
+    text-transform: uppercase;
+}

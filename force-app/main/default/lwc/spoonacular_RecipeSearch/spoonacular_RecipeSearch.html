@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Prepare Recipe">
+        <div class="slds-var-m-horizontal_medium">
+            <!-- Search Handlers -->
+            <lightning-layout horizontal-align="center">
+                <!-- Search Bar -->
+                <lightning-layout-item size="9" padding="around-small">
+                    <lightning-input
+                        variant="label-hidden"
+                        type="search"
+                        placeholder="Input an ingredient and hit search to see recipes"
+                        onchange={changeHandler}
+                        onkeypress={enterHandler}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <!-- Search Button -->
+                <lightning-layout-item size="1" padding="around-small">
+                    <lightning-button
+                        label="Search"
+                        variant="brand-outline"
+                        onclick={searchHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <!-- Get Random Receipe Button -->
+                <lightning-layout-item size="2" padding="around-small">
+                    <lightning-button
+                        label="Get Random Recipe"
+                        variant="brand"
+                        onclick={randomReceipeHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- Display Results -->
+            <template lwc:if={recipes}>    
+                <template for:each={recipes} for:item="recipe">
+                    <c-spoonacular_-recipe
+                        key={recipe.id}
+                        recipe-id={recipe.id}
+                        recipe-image={recipe.image}
+                        recipe-title={recipe.title}
+                        recipe-summary={recipe.summary}
+                        price-per-serving={recipe.pricePerServing}
+                        ready-in-minutes={recipe.readyInMinutes}
+                        dish-types={recipe.dishTypes}
+                        diets={recipe.diets}
+                    >
+                    </c-spoonacular_-recipe>
+                </template>
+            </template>
+        </div>
+    </lightning-card>  
+</template>

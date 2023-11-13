@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Display Opp Amounts" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select an account"
+                options={accountOptions}
+                value={selectedAccId}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <template if:true={total}>
+                <p></p><br>Total All opportunities Amount <strong> : 
+                <lightning-formatted-number value= {total} format-style="currency" currency-code="USD"> </lightning-formatted-number>
+                </strong>
+                <div class="slds-var-m-top_medium">
+                        Total All opportunities Amount <strong> :{total} </strong>
+                </div>
+            </template>
+            <template if:false={total}>
+                <div class="slds-var-m-top_medium">
+                        <strong> There is no Opportunity Amount  </strong>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

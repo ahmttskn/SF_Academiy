@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <template for:each={user} for:item="us">
+            <div key={us}>
+                 <strong>Name: </strong> {us.name} {us.lastName}
+            </div>
+        </template>
+    </div>
+</template>

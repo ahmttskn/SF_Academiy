@@ -1,0 +1,40 @@
+<template>
+    <template lwc:if={recordId}>
+        <lightning-card title={carName}>
+            <div class="slds-var-m-around_medium">
+                <img src={carURL} alt="Car image">
+                <div>
+                    <lightning-record-view-form
+                        object-api-name={objectApiName}
+                        record-id={recordId}
+                        density="compact"
+                        onload={handleRecordLoaded}>
+
+                        <section>
+                            <lightning-output-field field-name={fields.make}> </lightning-output-field>
+                            <lightning-output-field field-name={fields.category}> </lightning-output-field>
+                            <lightning-output-field field-name={fields.price}> </lightning-output-field>
+                        </section>
+                        <section>
+                            <div class="other-details">Other Details</div>
+                            <lightning-output-field field-name={fields.control}> </lightning-output-field>
+                            <lightning-output-field field-name={fields.fuel_Type}> </lightning-output-field>
+                            <lightning-output-field field-name={fields.seating_Capacity}> </lightning-output-field>
+                            <lightning-output-field field-name={fields.description}> </lightning-output-field>
+                        </section>
+                    </lightning-record-view-form>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+    <template lwc:else>
+        <lightning-card>
+            <div class="slds-var-m-around_medium slds-align_absolute-center">
+                <strong>Please select a car in order to see the full details!</strong>
+            </div>
+            <div class="slds-var-m-around_medium">
+                <img src={carhub_logo} alt="Car hub image">
+            </div>
+        </lightning-card>
+    </template>
+</template>

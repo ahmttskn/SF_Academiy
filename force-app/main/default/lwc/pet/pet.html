@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title={pet.Name}>
+        <div class="slds-var-m-around_small">
+            <img src={pet.Image__c} alt={pet.Name} />
+            <div>
+                <div class="slds-align_absolute-center"><strong>Breed: </strong> {pet.Breed__c}</div>
+                <div class="slds-align_absolute-center"><strong>Height: </strong> {pet.Height_Inches__c}</div>
+                <div class="slds-align_absolute-center"><strong>Weight: </strong> {pet.Weight_Lb__c}</div>
+                <div class="slds-align_absolute-center"><strong>Life Span: </strong> {pet.Life_Span_Years__c}</div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

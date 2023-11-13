@@ -1,0 +1,20 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <template if:true={size}>
+            <lightning-slider 
+                label="Volume" 
+                size={size} 
+                value={val}
+                onchange={changeHandler}>
+            </lightning-slider>
+        </template>
+        <template if:false={size}>
+            <lightning-slider 
+                label="Volume" 
+                size={size} 
+                value={val}
+                onchange={changeHandler}>
+            </lightning-slider>
+        </template>
+    </div>
+</template>

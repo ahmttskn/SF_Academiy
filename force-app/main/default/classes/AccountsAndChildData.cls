@@ -1,6 +1,9 @@
 @RestResource(urlMapping = '/fetchAccountsAndChilds/*')
 global with sharing class AccountsAndChildData {
 
+    //    /services/apexrest/fetchAccountsAndChilds/  
+    //    /services/apexrest/Account/?Type=Customer%20-%20Direct
+
     // USE CASE 1A ***************************************************************
     @HTTPGet    
     global static List<Account> getAccounts() {
@@ -28,6 +31,7 @@ global with sharing class AccountsAndChildData {
     }
 
     // USE CASE 1B ***************************************************************
+    /*
     @HTTPPost
     global static Map<String, String> createAccountAndChilds() {
 
@@ -83,6 +87,7 @@ global with sharing class AccountsAndChildData {
         
         return accountAndChildIdMap;
     }
+    */
 
 
 //---------Wrapper Classes---------
@@ -100,7 +105,7 @@ global with sharing class AccountsAndChildData {
     }
 
     public class CaseWrapper {
-        public String id;
+        //public String id;
         public String status;
         public String origin;
     }
@@ -111,5 +116,47 @@ global with sharing class AccountsAndChildData {
         public String stageName;
         public Date closeDate;
     }
+
+
+
+
+
+    /*
+
+    {
+        "account" : {
+               "name" : "Test From Post Man-1",
+               "type" : "Prospecting",
+               "phone" : "(767) 546-5768"
+           },
+           "cases" :[
+               {
+                   "status" : "New",
+                   "origin" : "Web"
+               },
+               {
+                   "status" : "New",
+                   "origin" : "Web"
+               }
+           ],
+           
+           "opportunities" :[
+               {
+                   "name" : "Test Opp From Workbench-opp1",
+                   "amount" : 123.45,
+                   "stageName" : "Prospecting",
+                   "closeDate" : "2022-05-29"
+               },
+               {
+                   "name" : "Test Opp From Workbench-opp1",
+                   "amount" : 123.45,
+                   "stageName" : "Prospecting",
+                   "closeDate" : "2022-05-29"
+               }
+           ]
+       }
+
+       */
+           
 
 }
