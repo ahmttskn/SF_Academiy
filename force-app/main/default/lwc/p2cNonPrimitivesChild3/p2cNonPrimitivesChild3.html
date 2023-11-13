@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-19-2022
+  @last modified by  : Huseyin
+-->
+<template>
+  <lightning-carousel>
+      <template for:each={carouselInfo} for:item="info">
+          <lightning-carousel-image
+              key={info.src}
+              src={info.src}
+              header={info.header}
+              description={info.description}
+              alternative-text={info.alternativeText}
+              href={info.href}>
+          </lightning-carousel-image>
+      </template>
+  </lightning-carousel>
+</template>

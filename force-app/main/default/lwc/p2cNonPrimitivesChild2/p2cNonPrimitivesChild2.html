@@ -1,0 +1,15 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-19-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <template for:each={contacts} for:item="con">
+        <div key={con.FirstName} class="slds-var-m-bottom_small">
+            <strong>{con.FirstName}  {con.LastName}</strong> <br>
+            {con.Title}, {con.Department}
+        </div>
+    </template>
+</template>

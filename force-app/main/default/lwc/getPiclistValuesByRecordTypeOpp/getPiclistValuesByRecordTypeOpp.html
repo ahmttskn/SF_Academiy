@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-09-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Get Picklist Values by Record Type">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Stage Name"
+                name="Stage"
+                options={stageOptions}
+                value={selectedStage}
+                onchange={changeHandler}
+            ></lightning-combobox>
+            <lightning-combobox
+                label="Type"
+                name="Type"
+                options={typeOptions}
+                value={selectedType}
+                onchange={changeHandler}
+        ></lightning-combobox>
+        <div class="slds-var-m-around_x-small">
+            Stage: {selectedStage}
+            <br>
+            Type : {selectedType}
+        </div>
+        </div>
+    </lightning-card>
+</template>

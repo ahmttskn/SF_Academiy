@@ -1,0 +1,5 @@
+.pillSize {
+    width: var(--lwc-spacingMedium, 1rem);
+    /* width: 100%; */
+}
+

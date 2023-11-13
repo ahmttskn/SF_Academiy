@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-24-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="C2P Event with Data">
+        <div class="slds-var-m-around_medium">
+            <lightning-button
+                label="Show Modal"
+                variant="brand"
+                onclick={modalHandler}
+                >
+            </lightning-button>
+
+            <div class="slds-var-m-top_small">
+                <template if:true={showModal}>
+                    <c-model-component1 
+                        onclose={closeHandlerParent} 
+                        onclosewithdata={closeHandlerWithData}
+                        >
+                    </c-model-component1>
+                </template>
+            </div>
+
+            <div class="slds-var-m-top_small">
+                <template if:true={info}>
+                    {info}
+                </template>
+            </div>
+
+            <div class="slds-var-m-top_small">
+                <template if:true={con}>
+                    {con.FirstName}, {con.LastName} <br>
+                    {con.Title}
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-22-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Search Contacts" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                type="search" 
+                name="name" 
+                label="Search Contacts" 
+                placeholder="type here..."
+                value={searchWord}
+                onchange={changeHandler}
+                >
+            </lightning-input>
+            <div class="slds-var-m-top_small">
+                <c-display-result
+                records={contacts}
+                columns={columns}
+                error={error}
+                >
+            </c-display-result>
+            </div>
+        </div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-19-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <template if:true={account.Name}>
+        <div><strong>Account Name: </strong>{account.Name}</div>
+    </template>
+    <template if:true={account.Type}>
+        <div><strong>Account Type: </strong>{account.Type}</div>
+    </template>
+    <template if:true={account.Industry}>
+        <div><strong>Industry: </strong>{account.Industry}</div>
+    </template>
+    <template if:true={account.AnnualRevenue}>
+        <div><strong>Annual Revenue : </strong>{account.AnnualRevenue}</div>
+    </template>
+    <template if:true={account.Rating}>
+        <div><strong>Account Rating: </strong>{account.Rating}</div>
+    </template>
+</template>

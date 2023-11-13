@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-18-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="ACCOUNT - CONTACTS DISPLAY">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select an account"
+                options={accountOptions}
+                value={selectedAccount}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <div class="slds-var-m-top_small">
+                <template if:true={contactsSize}>
+                    <strong>Number of Contacts: {contactsSize}</strong>
+                </template>
+                <template if:true={NumberofContact}>
+                    <strong>Number of Contacts with JS: {NumberofContact}</strong>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-17-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Imperative Apex -Search Contacts" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="search"
+                placeholder="Start entering search keys at least 3 character to see matching contact.."
+                label="Search Bar"
+                onkeyup={changeHandler}>
+            </lightning-input>
+            <div class="slds-var-m-around_medium">
+                <template if:true={contacts}>
+                    <template for:each={contacts} for:item="con">
+                        <div class="slds-var-m-around_x-small" key={con.Id}>
+                            <strong> {con.FirstName}, {con.LastName} </strong><br>
+                            {con.Title}, {con.Department} 
+                        </div>
+                    </template>
+                </template>
+                <!-- <template if:true={contacts}>
+                    <strong>MATCHING CONTACTS:</strong> <br/>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={contacts}
+                        columns={columns}>
+                    </lightning-datatable>
+                </template> -->
+                <template if:true={error}>
+                    {error}
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

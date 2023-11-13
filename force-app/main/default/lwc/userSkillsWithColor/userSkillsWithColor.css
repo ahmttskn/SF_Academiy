@@ -1,0 +1,58 @@
+.panel-heading{
+     
+  float: center;
+  width: auto;
+  margin-top: px;
+
+
+
+
+  padding: 10px;
+  line-height: 20px;
+  background: #5792F7;
+  color:white;
+  font-size: 16px;
+  text-align: left;
+  font-weight:bold;
+
+  border-top-left-radius: 5px;
+
+  border-top-right-radius: 5px;
+
+
+
+}
+.card {
+  background-color: aliceblue;
+}
+
+
+.panel-intro{
+ border: 1px solid #4b89f3; 
+padding:10px 10px 10px 10px;
+
+border-bottom-left-radius: 5px;
+
+border-bottom-right-radius: 5px;
+  
+}
+.skills-list {
+  list-style: disc; 
+  padding-left: 20px; 
+}
+/* Style for skills with completion percentage less than 100 */
+.skill-incomplete {
+  color: red;
+  font-weight: bold;
+}
+
+/* Style for skills with completion percentage equal to 100 */
+.skill-complete {
+  color: green;
+  font-weight: bold;
+}
+
+.recordId {
+  color: black;
+  font-weight: bold;
+}

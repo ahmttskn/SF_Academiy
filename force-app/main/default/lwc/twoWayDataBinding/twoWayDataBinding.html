@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-07-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Two Way Data Binding">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="text"
+                value={title}
+                placeholder="Enter your title"
+                label="Enter your updated title"
+                onkeyup={handleChange}
+               
+            ></lightning-input>
+        </div>
+        <div class="slds-var-m-around_small">
+            My name {fullName} and title is {title}.
+        </div>
+    </lightning-card>
+</template>

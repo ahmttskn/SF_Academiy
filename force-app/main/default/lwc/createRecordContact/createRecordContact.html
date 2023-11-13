@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-14-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Contact Form" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <form class="contact">
+                <!--  -->
+                
+                <lightning-input label="First Name" name="FirstName" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Last Name" name="LastName" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Email" name="Email" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Title" name="Title" onchange={changeHandler}></lightning-input>
+                <lightning-input label="Department" name="Department" onchange={changeHandler}></lightning-input>
+                <div class="slds-align_absolute-center slds-var-m-top_x-small">
+                    <lightning-button
+                        label="Cancel"
+                        variant="neutral"
+                        class="slds-var-m-right_small"
+                        onclick={cancelContact}
+                    ></lightning-button>
+                    <lightning-button
+                    label="Save"
+                    variant="brand"
+                    onclick={saveContact}
+                ></lightning-button>
+                </div>
+            </form>
+        </div>
+    </lightning-card>
+</template>

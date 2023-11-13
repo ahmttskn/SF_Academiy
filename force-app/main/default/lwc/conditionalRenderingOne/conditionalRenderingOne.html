@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-07-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-var-m-around_medium">
+            <template if:true={showContent}>
+                Show content has returned <strong>true</strong> hence I'm visible
+            </template>
+            <!-- <template if:false={showContent}>
+                Show content has returned <strong>false</strong> hence I'm visible
+            </template> -->
+            <br>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+                label="Show or Hide"
+                onclick={clickHandler}
+            >
+            </lightning-button>
+        </div>
+    </lightning-card>    
+</template>

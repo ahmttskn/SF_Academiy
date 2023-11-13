@@ -1,0 +1,23 @@
+<!-- sldsValidatorIgnore -->
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-22-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <!-- sldsValidatorIgnoreNextLine -->
+    <template if:true={records}>
+        <strong>Search Results:</strong>
+        <lightning-datatable
+                key-field="Id"
+                data={records}
+                columns={columns}
+                >
+        </lightning-datatable>
+    </template>
+    <template if:true={error}>
+        {error}
+    </template>
+</template>

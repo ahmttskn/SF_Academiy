@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-28-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Rendered Callback">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input
+                        label="Enter Your Name"
+                        type="text"
+                        value={name}
+                        onchange={changeHandler}
+                        >
+                    </lightning-input>
+                </div>
+                <div class="slds-col">
+                     <!-- <lightning-helptext content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."></lightning-helptext>  -->
+                    <lightning-button
+                        label="Show / Hide"
+                        onclick={showHandler}
+                        >
+                    </lightning-button>
+                </div>
+            </div>
+            <template if:true={showChild}>
+                <c-disconnected-callback-child
+                    name={name}
+                    >
+                </c-disconnected-callback-child>
+            </template>
+            <!-- <div class="slds-var-m-top_small">
+                Hello, {name}!
+            </div> -->
+        </div>
+    </lightning-card>
+</template>

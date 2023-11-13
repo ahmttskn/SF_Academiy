@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-09-2022
+  @last modified by  : Huseyin
+-->
+
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-09-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card
+        title="GET PICKLIST VALUES">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select an account type"
+                value={selectedType}
+                options={typeOptions}
+                onchange={changeHandler}
+            ></lightning-combobox>
+            <div class="slds-var-m-around_x-small"> 
+                Selected type is : {selectedType}
+            </div>
+        </div>    
+    </lightning-card>
+</template>

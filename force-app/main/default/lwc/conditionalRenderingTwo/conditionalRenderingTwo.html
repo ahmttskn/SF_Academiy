@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-02-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Conditional Rendering Two">
+        <div class="slds-var-m-around_medium">
+            <template if:true={name}>
+                I'll be visible if I have got some data... {name}
+            </template>
+             <br>
+            <template if:true={course}>
+                I have got some data and here it is...{course}
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

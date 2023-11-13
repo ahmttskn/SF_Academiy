@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-24-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <div class="slds-var-m-around_medium">        
+        <lightning-record-form        
+        columns="2"
+        record-id={recordId}
+        object-api-name={objectName}
+        fields={selectedFields}
+        onsuccess={successHandler}>   
+        </lightning-record-form>
+    </div>
+</template>

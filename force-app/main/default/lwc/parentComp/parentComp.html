@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-25-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <h2>This is parent component</h2>
+    <div onshow={showHandler2}>
+        <c-child-comp 
+            onshow={showHandler1}
+        >
+        </c-child-comp>
+    </div>
+</template>

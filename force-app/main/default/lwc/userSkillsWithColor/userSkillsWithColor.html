@@ -1,0 +1,50 @@
+<template>
+  <div class="panel">
+    <div class="panel-heading">Developer Skills
+      <lightning-card  class="slds-var-m-around_medium">
+          <div class="panel-intro">
+            <template if:true={skills}>
+              <ul class="skills-list" >
+                <div class="recordId">RecordId: {recordId}</div><br>
+                <template for:each={skills} for:item="skill" >
+                    <li key={skill}>
+                        <div class={skill.isCompleted}>{skill.name} -   {skill.percentage}%     - {skill.isCompleted}</div>
+                        <!--  -->
+                    </li>
+                </template>  
+              </ul>
+            </template>
+            <template if:false={skills}>
+              <P>Herhangi bir Sertifika bulunmuyor!!</P>
+            </template>
+          </div>
+      </lightning-card> 
+    </div>
+  </div> 
+
+
+  <lightning-card title="Developer Skills" icon-name="standard:answer_public"> 
+    <div class="card">
+      <table class="slds-var-m-around_small">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Progress</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={skills} for:item="skill">
+                <tr key={skill.title}>
+                    <td class={skill.isCompleted}>{skill.name}</td>
+                    <td class={skill.isCompleted}>% {skill.percentage}</td>
+                    <td class={skill.isCompleted}>{skill.isCompleted}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+   </div>
+     
+  
+  </lightning-card>
+</template>

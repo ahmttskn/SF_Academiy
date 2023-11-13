@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="OPP DETAILS" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select Account"
+                options={accountOptions}
+                value={selectedAccount}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <div class="slds-var-m-top_small">
+                <template if:true={total}>
+                    <strong>Total Opportunity Amount: {total}</strong>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

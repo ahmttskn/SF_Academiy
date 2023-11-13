@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : Huseyin
+  @group             : 
+  @last modified on  : 08-28-2022
+  @last modified by  : Huseyin
+-->
+<template>
+    <lightning-card title="Home Page">
+        <div class="slds-var-m-around_medium">
+            <div>
+                Are you a first time customer ? choose Signup <br>
+                Are you an existing customer ? choose Login <br>
+            </div>
+
+            <div class="slds-align_absolute-center slds-var-m-top_small">
+                
+                <lightning-button label="Login" variant="brand" onclick={clickHandler} class="slds-var-m-right_small">
+                </lightning-button>
+
+
+                <lightning-button label="Signup" variant="neutral" onclick={clickHandler}>
+                </lightning-button>
+
+            </div>
+        </div>
+
+    </lightning-card>
+</template>
