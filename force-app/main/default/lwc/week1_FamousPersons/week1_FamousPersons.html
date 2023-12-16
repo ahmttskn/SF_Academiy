@@ -1,16 +1,37 @@
 <template>
     <lightning-card title="Famous Persons">
-        <div class="slds-var-m-around_medium">
-            <template if:true={contacts}>
-                <template for:each={contacts} for:item="con">
-                    <div key={con.name} class="slds-var-m-around_large">
-                        <strong>Name: </strong> {con.name} <br/>
-                        <strong>Title: </strong> {con.title} <br/>
-                        <strong>Company: </strong> {con.company} <br/>
-                        <strong>Stay: </strong> {con.stay} <br/>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span>
+                    <div class="slds-var-m-around_medium">
+                        <template if:true={contacts}>
+                            <template for:each={contacts} for:item="con">
+                                <div key={con.name} class="slds-var-m-around_large">
+                                    <strong>Name: </strong> {con.name} <br/>
+                                    <strong>Title: </strong> {con.title} <br/>
+                                    <strong>Company: </strong> {con.company} <br/>
+                                    <strong>Stay: </strong> {con.stay} <br/>
+                                </div>
+                            </template>
+                        </template>
                     </div>
-                </template>
-            </template>
+                </span>
+            </div>
+            <div class="slds-col">
+                <span> <br>
+                    <div class="slds-var-m-around_medium">
+                        <ul class="slds-var-m-around_medium slds-list_dotted">
+                            <template for:each={contacts} for:item="contact">
+                            <li key={contact}>
+                                <Strong>Name:</Strong>{contact.name},<br>
+                                <strong>Title:</strong> {contact.title},<br>
+                                <strong>Company:</strong> {contact.company},<br>
+                                <strong>Stay:</strong> {contact.stay} <br><br></li>
+                            </template>
+                        </ul>        
+                    </div>
+                </span>
+            </div>
         </div>
     </lightning-card>
 </template>

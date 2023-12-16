@@ -6,6 +6,14 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
             AccountTriggerHandler.accRating(Trigger.New);
         }
     }
+    
+     if (Trigger.isAfter) {
+        if (Trigger.isInsert) {
+            //System.enqueueJob(new AccountQueableHandler(Trigger.new));
+            AccountQueableHandler accQuauablehandler = new AccountQueableHandler(Trigger.new);
+        }
+            
+    }
 
     
     /*

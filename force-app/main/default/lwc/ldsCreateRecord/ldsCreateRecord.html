@@ -9,6 +9,7 @@
             ></lightning-input>
             <lightning-input
                 label="Name"
+                data-id="name"
                 onchange={handleNameChange}
                 class="slds-var-m-bottom_x-small"
             ></lightning-input>
@@ -18,16 +19,10 @@
                 onclick={createAccount}
             ></lightning-button>
         </div>
-        
-        <div>
-            Create a record without writing server-side code. Always consider
-            lightning-record-form and lightning-record-edit-form first.
-        </div>
-<!--  
+
         <c-view-source source="lwc/ldsCreateRecord" slot="footer">
             Create a record without writing server-side code. Always consider
             lightning-record-form and lightning-record-edit-form first.
         </c-view-source>
--->
     </lightning-card>
 </template>

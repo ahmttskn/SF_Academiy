@@ -1,10 +1,20 @@
 <template>  
     <lightning-card title="Contact information">
-        <template for:each={contacts} for:item="contact">
-            <p class="slds-var-m-around_large" key={contact.name}>
-                {contact.name}, {contact.title}, {contact.company}, {contact.stay}
-            </p>
-        </template>
+        <div class="slds-var-m-around_medium">
+            <template for:each={contacts} for:item="contact">
+                <div class="slds-var-m-around_small" key={contact.name}>
+                    {contact.name}, {contact.title}, {contact.company}, {contact.stay}
+                </div>
+            </template> <br>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <ol class="slds-var-m-around_medium slds-list_ordered">
+                <template for:each={contacts} for:item="contact">
+                <li key={contact} class="slds-var-m-around_small">
+                    {contact.name}, {contact.title}, {contact.company}, {contact.stay}</li>
+                </template>
+            </ol>        
+        </div>
         <!-- <p class="slds-var-m-around_medium">
             {firstContact.name}, {firstContact.title}, {firstContact.company}, {firstContact.stay}
         </p> -->

@@ -3,6 +3,7 @@ global with sharing class AccountsAndChildData {
 
     //    /services/apexrest/fetchAccountsAndChilds/  
     //    /services/apexrest/Account/?Type=Customer%20-%20Direct
+    //    /services/apexrest/fetchAccountsAndChilds/?Type=Customer%20-%20Channel&Industry=Biotechnology
 
     // USE CASE 1A ***************************************************************
     @HTTPGet    
@@ -31,7 +32,7 @@ global with sharing class AccountsAndChildData {
     }
 
     // USE CASE 1B ***************************************************************
-    /*
+    
     @HTTPPost
     global static Map<String, String> createAccountAndChilds() {
 
@@ -87,7 +88,7 @@ global with sharing class AccountsAndChildData {
         
         return accountAndChildIdMap;
     }
-    */
+    
 
 
 //---------Wrapper Classes---------

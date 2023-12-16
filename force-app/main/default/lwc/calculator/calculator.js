@@ -19,4 +19,11 @@ export default class Calculator extends LightningElement {
         }
         this.sum = Number(this.input1) + Number(this.input2);
     }
+
+/*
+    get amount(){
+        let total=parseInt(this.num1)+parseInt(this.num2);
+        return total;
+    }
+*/
 }
