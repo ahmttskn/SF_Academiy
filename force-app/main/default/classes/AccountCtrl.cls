@@ -21,17 +21,23 @@ public with sharing class AccountCtrl {
                 WHERE Type = :type ];
     }
 
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled
     public static decimal calculateOppAmount(string accId) {
         Decimal resultOpp = 0;
         List<Opportunity> oppList = [SELECT Id, Amount
                                 FROM Opportunity
-                                WHERE AccountId = :accId AND Amount != null
+                                WHERE AccountId = :accId /*AND Amount != null*/
                                 WITH SECURITY_ENFORCED];
-        for (Opportunity opp : oppList) {
-            resultOpp += opp.Amount;
+        if (oppList.size()>0) {
+            for (Opportunity Opp : oppList) {
+                if (opp.Amount != null) {
+                    resultOpp += opp.Amount;
+                }
+            }
         }
-
+        else if (oppList.size()==0) {
+            resultOpp = -1;
+        }
         return resultOpp;
     }
     

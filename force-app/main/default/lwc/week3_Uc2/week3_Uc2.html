@@ -15,11 +15,16 @@
                         Total All opportunities Amount <strong> :{total} </strong>
                 </div>
             </template>
-            <template if:false={total}>
+            <template if:true={tOpp} >
                 <div class="slds-var-m-top_medium">
-                        <strong> There is no Opportunity Amount  </strong>
+                    <strong>  There is an Opportunity, but no Amount specified.  </strong>
                 </div>
-            </template>
+            </template> 
+            <template if:true={noOpp}>
+                <div class="slds-var-m-top_medium">
+                    <strong> There is no Raleted Opportunity Under the Selected Account </strong>
+                </div>
+            </template> 
         </div>
     </lightning-card>
 </template>
