@@ -1,0 +1,29 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-quick-action-panel header="Membership Action">
+        <template if:true={errors}>
+            {errors}
+        </template>
+
+        <p>Our current recordId is {recordId}</p>
+        <p>The user has selected {selection}</p>
+        
+        <div>
+
+                <lightning-datatable
+                    key-field="id"
+                    data={positions}
+                    columns={columnsList}>
+                </lightning-datatable>
+            
+            <br />
+            
+            <lightning-button
+                label="Handle It"
+                title="Handle It"
+                onclick={handleClick}
+                class="slds-m-left_x-small slds-align_absolute-center">
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

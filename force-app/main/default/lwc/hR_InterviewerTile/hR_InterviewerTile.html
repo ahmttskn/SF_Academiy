@@ -1,0 +1,27 @@
+<template>
+
+    <template if:true={interviewerOne}>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item>
+                <template if:true={interviewerOne.Picture__c}>
+                    <img src={interviewerOne.Picture__c} alt="Profile photo" />
+                </template>
+
+                <template if:false={interviewerOne.Picture__c}>
+                    <img src="https://cdn2.f-cdn.com/contestentries/1440473/30778261/5bdd02db9ff4c_thumbCard.jpg" alt="Profile photo"/>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <p>{interviewerOne.Name}</p>
+                <p>
+                    <lightning-formatted-email value={interviewerOne.Email}></lightning-formatted-email>
+                </p>
+                <p>
+                    <lightning-formatted-rich-text value={interviewerOne.About_Me__c}></lightning-formatted-rich-text>
+                </p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </template>
+    
+</template>

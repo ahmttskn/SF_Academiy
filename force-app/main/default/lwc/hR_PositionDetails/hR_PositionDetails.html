@@ -1,0 +1,83 @@
+<!-- sldsValidatorIgnore -->
+<template>
+
+    <div class="slds-var-m-around_small">
+        <lightning-card variant="Narrow" title="Position Details" icon-name="standard:event">
+            <lightning-tabset variant="scoped" active-tab-value="position">
+                <!-- Position Details Tab -->
+                <lightning-tab label="Position Details" value="position">
+                    <div class="slds-var-m-around_small">
+                        <lightning-record-form
+                            object-api-name="Position__c"
+                            record-id={recordId}
+                            mode="readonly"
+                            layout-type="Full"
+                            columns="2">
+                        </lightning-record-form>
+                    </div>
+                </lightning-tab>
+
+                <!-- Position Interviewers Tab -->
+                <lightning-tab label="Position Interviewers" value="interviewer" onactive={handleInterviewerActive}>
+                    <lightning-button if:true={isAdmin}
+                        variant="brand"
+                        label="New Interviewer"
+                        title="New Interviewer"
+                        onclick={createInterviewer}>
+                    </lightning-button>
+
+                    <br /><br />
+
+                    <template if:true={interviewerList}>
+                        <template for:each={interviewerList} for:item="interviewer">
+                            <c-h-r_-interviewer-tile
+                                interviewer-one={interviewer}
+                                key={interviewer.Id}>
+                            </c-h-r_-interviewer-tile>
+                        </template>
+                    </template>
+
+                    <template if:false={errors}>
+                        <template if:false={interviewerList}>
+                            There are no Interviewer associated with the Position
+                        </template>
+                    </template>
+                </lightning-tab>
+
+                <!-- Position Location Tab -->
+                <lightning-tab label="Position Location" value="location" onactive={handleLocatioDetails}>
+                    <template if:true={PositionRec}>
+                        <strong>** Location Landmark - </strong>{PositionRec.Location_HR__r.Land_Mark__c} <br><br>
+                        <lightning-formatted-address
+                            city={PositionRec.Location_HR__r.City__c}
+                            province={PositionRec.Location_HR__r.State__c}
+                            postal-code={PositionRec.Location_HR__r.Postal_Code__c}
+                            country={PositionRec.Location_HR__r.Country__c}
+                            street={PositionRec.Location_HR__r.Street__c}
+                            title="Position Location">
+                        </lightning-formatted-address>
+                    </template>
+                </lightning-tab>
+
+                <!-- Position Candidates Tab -->
+                <lightning-tab label="Position - Candidates" value="candidate" onactive={handlePositionCandidate}>
+                    <lightning-button
+                        variant="brand"
+                        label="New Candidate"
+                        title="New Candidate"
+                        onclick={createCandidate}>
+                    </lightning-button>
+
+                    <lightning-datatable
+                        key-field="id"
+                        data={candidateList}
+                        show-row-number-column
+                        hide-checkbox-column
+                        columns={columnsList}>
+                    </lightning-datatable>
+                </lightning-tab>
+            </lightning-tabset>
+        </lightning-card>
+    </div>
+    
+</template>

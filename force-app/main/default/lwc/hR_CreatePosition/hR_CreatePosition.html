@@ -1,0 +1,111 @@
+<template>
+    
+    <lightning-card variant="Narrow" title="Position Information" icon-name="standard:event">
+        <div class="slds-var-m-around_small">
+            <template if:true={errors}>
+                {errors}
+            </template>
+        </div>
+
+        <div class="slds-var-m-around_small">
+            <lightning-input
+                type="text"
+                required
+                variant="standard"
+                name="Position_Name__c"
+                value={positionRecord.Position_Name__c}
+                label="Position Name"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <c-h-r_-custom-look-up
+                onselect={handleLookup}
+                object-name="HR_Manager__c"
+                field-name="Name"
+                parent-id-field="HR_Manager__c"
+                icon-name="standard:people"
+                label="HR Manager">
+            </c-h-r_-custom-look-up>
+
+            <br />
+
+            <lightning-input
+                type="datetime"
+                required
+                variant="standard"
+                name="Start_Date_Time__c"
+                label="Start Date"
+                value={positionRecord.Start_Date_Time__c}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+                type="datetime"
+                variant="standard"
+                value={positionRecord.End_Date_Time__c}
+                name="End_Date_Time__c"
+                label="End Date"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <!-- <lightning-input
+                type="number"
+                required
+                variant="standard"
+                value={positionRecord.Position_Type__c}
+                name="Position_Type__c"
+                label="Position Type"
+                onchange={handleChange}>
+            </lightning-input> -->
+
+            <lightning-combobox
+                name="Position_Type__c"
+                label="Position Type"
+                required
+                variant="standard"
+                value={positionRecord.Position_Type__c}
+                placeholder="Select Type"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+
+            <c-h-r_-custom-look-up
+                onselect={handleLookup}
+                object-name="Location_HR__c"
+                field-name="Name"
+                parent-id-field="Location_HR__c"
+                icon-name="utility:location"
+                label="Position Office Location">
+            </c-h-r_-custom-look-up>
+
+            <br />
+
+            <lightning-input-rich-text
+                variant="standard"
+                value={positionRecord.Position_Detail__c}
+                name="Position_Detail__c"
+                label="Position Details"
+                onchange={handleChange}>
+            </lightning-input-rich-text>
+        </div>
+
+        <div class="slds-var-m-around_small">
+            <lightning-button
+                label="Cancel"
+                title="Cancel"
+                onclick={handleCancel}>
+            </lightning-button>
+            
+            &nbsp; &nbsp;
+
+            <lightning-button
+                variant="brand"
+                label="Add Position"
+                title="Add Position"
+                onclick={handleClick}>
+            </lightning-button>
+
+        </div>
+    </lightning-card>
+    
+</template>
