@@ -3,6 +3,7 @@ import initMethod from '@salesforce/apex/SalesController.initMethod';
 export default class AccSalesSummaryByBU extends LightningElement {
   prevYear;
   currYear;
+  currYearLast
   @api recordId;
   @track error;
   @track bu;
@@ -97,8 +98,9 @@ export default class AccSalesSummaryByBU extends LightningElement {
       if (result) {
         this.salesObj=JSON.parse(result);
         var today = new Date();
-        this.prevYear =today.getFullYear()-1;
-        this.currYear = today.getFullYear(); 
+        this.prevYear =today.getFullYear()-2;
+        this.currYear =today.getFullYear()-1;
+        this.currYearLast = today.getFullYear(); 
         
         this.buListFinal=this.salesObj.buListFinal;
         this.buListFinal.forEach(bu => {
