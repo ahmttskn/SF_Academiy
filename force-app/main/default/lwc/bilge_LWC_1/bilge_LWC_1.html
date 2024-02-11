@@ -1,0 +1,36 @@
+<template>
+    <lightning-card icon-name="standard:account" title="My Name & Role">
+        <div class="slds-var-p-around_medium ">
+            <lightning-input 
+                type="text"
+                name="input" 
+                onchange={changeHandler} 
+                label="Enter your name">
+            </lightning-input>
+        </div>
+        <div class="slds-var-p-around_medium ">
+            <lightning-combobox
+                name="picklist"
+                label="Select Your Role"
+                value={role}
+                placeholder="Select your role"
+                options={options}
+                onchange={changeHandler}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-p-around_medium ">
+            <lightning-combobox
+                name="picklist2"
+                label="Select Your Role"
+                value={role2}
+                placeholder="Select your role"
+                options={options2}
+                onchange={changeHandler}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-around_small">
+             My name is <strong>{name}</strong> and My role is <strong>{role}</strong> <br>
+             {role2}
+        </div>
+    </lightning-card>
+</template>

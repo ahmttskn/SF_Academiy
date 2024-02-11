@@ -6,6 +6,9 @@
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
 
+ String cronExp = '0 0 * * * ?'; // Her 15 dakikada bir çalışacak cron ifadesi
+System.schedule('QuickbooksConnector', cronExp, new QuickbooksConnector_RefreshAccessToken());
+
 
 
 Account[] accts = new Account[]{new Account(billingcity = 'San Jose')};
