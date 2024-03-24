@@ -3,7 +3,10 @@
         <div class="slds-var-m-top_medium">
             <strong>SEARCH RESULTS: </strong>
             <template for:each={contacts} for:item="con">
-                <div key={con.Id} class="slds-var-m-bottom_small" data-id={con.Id} onclick={clickHandler}>
+                <div key={con.Id} 
+                        class="slds-var-m-bottom_small" 
+                        data-id={con.Id} 
+                        onclick={clickHandler}>
                     <strong> Full Name :</strong> {con.FirstName} {con.LastName} <br>
                     <strong> Title and Department :</strong>{con.Title}  {con.Department} <br/>
                 </div>
