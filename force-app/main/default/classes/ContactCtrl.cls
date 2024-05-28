@@ -3,12 +3,17 @@ public with sharing class ContactCtrl {
     
     @AuraEnabled(cacheable=true)
     public static List<Contact> searchContacts(String searchKey) {
-        searchKey = '%' + searchKey + '%';
-        return [SELECT Id, FirstName, LastName, Title, Department, Phone, Email
-                FROM Contact
-                WHERE FirstName LIKE :searchKey
-                OR LastName LIKE :searchKey
-                WITH SECURITY_ENFORCED];
+            try {
+                searchKey = '%' + searchKey + '%';
+                return [SELECT Id, FirstName, LastName, Title, Department, Phone, Email
+                        FROM Contact
+                        WHERE FirstName LIKE :searchKey
+                        OR LastName LIKE :searchKey
+                        WITH SECURITY_ENFORCED];
+            } catch (Exception ex) {
+                System.debug(ex);
+                return null;
+            }
     }
 
     @AuraEnabled(cacheable=true)
@@ -42,6 +47,18 @@ public with sharing class ContactCtrl {
         FutureMethodTest.name3();
     }
 	
-	
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> findContacts(String searchKey) {
+        String key = '%' + searchKey + '%';
+        return [
+            SELECT Id, LastName, Title, Phone, Department, Email
+            FROM Contact
+            WHERE Title != null 
+                AND Phone != null 
+                AND LastName LIKE :key 
+                AND Email != null
+            WITH SECURITY_ENFORCED
+        ];
+    }
     
 }

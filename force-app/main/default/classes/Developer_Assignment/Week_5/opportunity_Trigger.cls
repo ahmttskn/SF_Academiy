@@ -105,8 +105,11 @@ public with sharing class opportunity_Trigger {
                 }
             }
             else if(Trigger.isUndelete){
-                for(Opportunity opp : Trigger.Old){
-                    accIdsSet.add(opp.AccountId);
+                for(Opportunity opp : Trigger.new){ // newMap is only available in after trigger
+                    //Collect all AccountIds from the related opportunites for which Amount field is not null
+                    if(opp.Amount != null && opp.AccountId != null){
+                        accIdsSet.add(opp.AccountId);
+                    };
                 }
             }
         }

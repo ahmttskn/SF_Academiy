@@ -20,7 +20,7 @@ export default class P2cActionAtPatentParent1 extends LightningElement {
     }
 
     changeHandler(event){
-        if(event.target.name=="Bar Size"){
+        if(event.target.name === "Bar Size"){
             this.barSize=event.target.value;
         }else{
             this.proggressValue=event.target.value;
